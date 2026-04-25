@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #948dfe;
+    color: #000000;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./src/img/imgfondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+h1 {
+    text-align: center;
+    width: 100%;
+}
+.div-container {
+    background: rgba(225, 225, 225, 0.5);
+    width: 400px;
+    height: 300px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;   
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
