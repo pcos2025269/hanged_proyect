@@ -5,7 +5,7 @@
 }
 
 .btn {
-    background-color: #948dfe;
+    
     color: #000000;
     font-size: 18px;
     padding: 12px 24px;
@@ -14,8 +14,29 @@
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #7a73e0;
+
+#button_easy {
+    background-color: #a0fe8d;
+}
+
+#button_easy:hover {
+    background-color: #7ee06f;
+}
+
+#button_medium {
+    background-color: orange;
+}
+
+#button_medium:hover {
+    background-color: #e69500;
+}
+
+#button_hard {
+    background-color: red;
+}
+
+#button_hard:hover {
+    background-color: #cc0000;
 }
 
 body {
