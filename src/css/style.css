@@ -54,6 +54,21 @@ h1 {
     text-align: center;
     width: 100%;
 }
+
+.div-tittle {
+    background: rgba(225, 225, 225, 0.5);
+    width: 400px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;   
+    justify-content: center; 
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+
 .div-container {
     background: rgba(225, 225, 225, 0.5);
     width: 400px;
