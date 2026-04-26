@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-button {
+.btn {
     background-color: #948dfe;
     color: #000000;
     font-size: 18px;
@@ -13,6 +13,11 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.btn:hover {
+    background-color: #7a73e0;
+}
+
 body {
     margin: 0;
     height: 100vh;
