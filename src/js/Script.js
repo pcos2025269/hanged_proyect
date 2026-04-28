@@ -56,3 +56,26 @@ function botonesGEnrados() {
         container.appendChild(button); 
     });
 }
+
+function muñecoAhorcado() {
+    const imagen = document.getElementById("hangman");
+    const errores = 7 - lives;
+
+    if (errores == 0){
+        imagen.src = "src/img/WoodStructure.png";
+    }else if (errores == 1){
+        imagen.src = "src/img/Stage1.png";
+    }else if (errores == 2){
+        imagen  ,src = "src/img/Stage2.png";
+    }else if (errores == 3){
+        imagen.src = "src/img/Stage3.png";
+    }else if (errores == 4){
+        imagen.src = "src/img/Stage4.png";
+    }else if (errores == 5){
+        imagen.src = "src/img/Stage5.png";
+    }else if (errores == 6){
+        imagen.src = "src/img/Stage6.png";
+    } else if (errores == 7){
+        imagen.src = "src/img/Stage7.png";
+    }
+}
