@@ -59,6 +59,21 @@ function botonesGenrados() {
     });
 }
 
+function mostrarPalabra() {
+    const contenedor = document.getElementById(".palabra");
+    let output = "";
+
+    for (let word of secretWord) {
+        if (guessedLetters.includes(word)) {
+            output += word + " ";
+        } else {
+            output += "_ ";
+        }
+        }
+    contenedor.textContent = output;
+    
+}
+
 function muñecoAhorcado() {
     const imagen = document.getElementById("hangman");
     const errores = 7 - lives;
