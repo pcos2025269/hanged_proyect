@@ -54,13 +54,15 @@ function botonesGenrados() {
                 lives--;
                 muñecoAhorcado();
             }
+            mostrarPalabra();
+            checkGAme();
         });
         container.appendChild(button); 
     });
 }
 
 function mostrarPalabra() {
-    const contenedor = document.getElementById(".palabra");
+    const contenedor = document.querySelector(".palabra");
     let output = "";
 
     for (let word of secretWord) {
@@ -71,7 +73,19 @@ function mostrarPalabra() {
         }
         }
     contenedor.textContent = output;
-    
+    checkGAme();
+}
+
+function checkGAme(){
+    if (lives <= 0) {
+        alert("¡Has perdido! La palabra era: " + Word);
+        GameStart();
+    }
+    const win = secretWord.every(letter => guessedLetters.includes(letter));
+    if (win) {
+        alert("¡Has ganado! La palabra era: " + Word);
+        
+    }
 }
 
 function muñecoAhorcado() {
