@@ -1,0 +1,5 @@
+sol
+pan
+casa
+gato
+luz

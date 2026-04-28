@@ -2,6 +2,22 @@ let Word = "";
 let secretWord = [];
 let guessedLetters = [];
 let lives = 7;
+let dificulty = "";
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const difficulty = localStorage.getItem("difficulty");
+
+    console.log("Dificultad recibida:", difficulty);
+
+    if (!difficulty) {
+        alert("No hay dificultad seleccionada");
+        window.location.href = "index.html";
+        return;
+    }
+
+    GameStart(difficulty);
+}); 
 
 async function giveWord(dificulty) {
     let archivo = ""
@@ -19,7 +35,8 @@ async function giveWord(dificulty) {
     }
 
 
-    const response =  await fetch(archivo);
+    const response =  await fetch(archivo)
+                                .catch(err => console.error("Error cargando archivo:", err));
     const text = await response.text();
 
     const palabras = text
@@ -35,11 +52,14 @@ async function GameStart(dificulty) {
     secretWord = Word.split("");
     guessedLetters = [];
     botonesGenrados();
+    mostrarPalabra();
+    actualizarVidas();
+    muñecoAhorcado();
 }
 
 function botonesGenrados() {
     const abecedary = "abcdefghijklmnopqrstuvwxyz";
-    const container = document.querySelector(".buttons-container");
+    const container = document.querySelector(".letras-container");
     container.innerHTML = "";
     abecedary.split("").forEach(letter => {
         const button = document.createElement("button");
@@ -54,6 +74,7 @@ function botonesGenrados() {
             if (!Word.includes(letter)) {
                 lives--;
                 muñecoAhorcado();
+                actualizarVidas();
             }
             mostrarPalabra();
         });
@@ -62,7 +83,7 @@ function botonesGenrados() {
 }
 
 function mostrarPalabra() {
-    const contenedor = document.querySelector(".palabra");
+    const contenedor = document.getElementById("word");
     let output = "";
 
     for (let word of secretWord) {
@@ -89,7 +110,7 @@ function checkGAme(){
 }
 
 function disableButtons() {
-    const buttons = document.querySelectorAll(".buttons-container button");
+    const buttons = document.querySelectorAll(".letras-container button");
 
     buttons.forEach(btn => {
         btn.disabled = true;
@@ -100,6 +121,7 @@ function muñecoAhorcado() {
     const imagen = document.getElementById("hangman");
     const errores = 7 - lives;
 
+    if (!imagen) return;
     if (errores == 0){
         imagen.src = "src/img/WoodStructure.png";
     }else if (errores == 1){
@@ -116,5 +138,12 @@ function muñecoAhorcado() {
         imagen.src = "src/img/Stage6.png";
     } else if (errores == 7){
         imagen.src = "src/img/Stage7.png";
+    }
+}
+
+function actualizarVidas() {
+    const span = document.getElementById("attempts");
+    if (span) {
+        span.textContent = lives;
     }
 }
