@@ -30,6 +30,7 @@ async function giveWord(dificulty) {
 }
 
 async function GameStart(dificulty) {
+    lives = 7;
     Word = await giveWord(dificulty);
     secretWord = Word.split("");
     guessedLetters = [];
@@ -55,7 +56,6 @@ function botonesGenrados() {
                 muñecoAhorcado();
             }
             mostrarPalabra();
-            checkGAme();
         });
         container.appendChild(button); 
     });
@@ -79,13 +79,21 @@ function mostrarPalabra() {
 function checkGAme(){
     if (lives <= 0) {
         alert("¡Has perdido! La palabra era: " + Word);
-        GameStart();
+        disableButtons();
     }
     const win = secretWord.every(letter => guessedLetters.includes(letter));
     if (win) {
         alert("¡Has ganado! La palabra era: " + Word);
-        
+        disableButtons();
     }
+}
+
+function disableButtons() {
+    const buttons = document.querySelectorAll(".buttons-container button");
+
+    buttons.forEach(btn => {
+        btn.disabled = true;
+    });
 }
 
 function muñecoAhorcado() {
