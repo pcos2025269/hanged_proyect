@@ -29,16 +29,17 @@ async function giveWord(dificulty) {
     return palabras[indice];
 }
 
-async function GAmeStart(dificulty) {
+async function GameStart(dificulty) {
     Word = await giveWord(dificulty);
     secretWord = Word.split("");
     guessedLetters = [];
-    botonesGEnrados();
+    botonesGenrados();
 }
 
-function botonesGEnrados() {
+function botonesGenrados() {
     const abecedary = "abcdefghijklmnopqrstuvwxyz";
     const container = document.querySelector(".buttons-container");
+    container.innerHTML = "";
     abecedary.split("").forEach(letter => {
         const button = document.createElement("button");
         button.textContent = letter;
@@ -51,6 +52,7 @@ function botonesGEnrados() {
             
             if (!Word.includes(letter)) {
                 lives--;
+                muñecoAhorcado();
             }
         });
         container.appendChild(button); 
