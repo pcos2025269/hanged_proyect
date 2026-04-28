@@ -1,4 +1,4 @@
-let word = "";
+let Word = "";
 let secretWord = [];
 let guessedLetters = [];
 let lives = 7;
@@ -33,7 +33,7 @@ async function GAmeStart(dificulty) {
     Word = await giveWord(dificulty);
     secretWord = Word.split("");
     guessedLetters = [];
-    botonesGEnrados
+    botonesGEnrados();
 }
 
 function botonesGEnrados() {
@@ -43,13 +43,13 @@ function botonesGEnrados() {
         const button = document.createElement("button");
         button.textContent = letter;
 
-        buttion.addEventListener("click", () => {
+        button.addEventListener("click", () => {
             if (guessedLetters.includes(letter)) return;
 
             guessedLetters.push(letter);
             button.disabled = true;
             
-            if (!word.includes(letter)) {
+            if (!Word.includes(letter)) {
                 lives--;
             }
         });
@@ -66,7 +66,7 @@ function muñecoAhorcado() {
     }else if (errores == 1){
         imagen.src = "src/img/Stage1.png";
     }else if (errores == 2){
-        imagen  ,src = "src/img/Stage2.png";
+        imagen.src = "src/img/Stage2.png";
     }else if (errores == 3){
         imagen.src = "src/img/Stage3.png";
     }else if (errores == 4){
