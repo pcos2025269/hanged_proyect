@@ -1,5 +1,6 @@
-let word = [];
+let word = "";
 let secretWord = [];
+let guessedLetters = [];
 let lives = 7;
 
 async function giveWord(dificulty) {
@@ -26,4 +27,32 @@ async function giveWord(dificulty) {
                         .filter(p => p.trim() !== "");
     const indice = Math.floor(Math.random() * palabras.length);
     return palabras[indice];
+}
+
+async function GAmeStart(dificulty) {
+    Word = await giveWord(dificulty);
+    secretWord = Word.split("");
+    guessedLetters = [];
+    botonesGEnrados
+}
+
+function botonesGEnrados() {
+    const abecedary = "abcdefghijklmnopqrstuvwxyz";
+    const container = document.querySelector(".buttons-container");
+    abecedary.split("").forEach(letter => {
+        const button = document.createElement("button");
+        button.textContent = letter;
+
+        buttion.addEventListener("click", () => {
+            if (guessedLetters.includes(letter)) return;
+
+            guessedLetters.push(letter);
+            button.disabled = true;
+            
+            if (!word.includes(letter)) {
+                lives--;
+            }
+        });
+        container.appendChild(button); 
+    });
 }
