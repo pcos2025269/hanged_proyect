@@ -41,7 +41,8 @@ async function giveWord(dificulty) {
 
     const palabras = text
                         .split("\n")
-                        .filter(p => p.trim() !== "");
+                        .map(p => p.trim().replace(/\r/g, ""))
+                        .filter(p => p !== "");
     const indice = Math.floor(Math.random() * palabras.length);
     return palabras[indice];
 }
