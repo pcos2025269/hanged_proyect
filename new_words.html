@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/new_words.css">
+</head>
+<body>
+    <section class="return">  
+        <a href="index.html"> 
+            <button class="regreso">Regresar</button>
+        </a>
+    </section>
+    
+    <div class="div-container"> 
+        <h1>Agregar palabras</h1>
+        <p>En esta sección se agregarán nuevas palabras para el juego del ahorcado.</p>
+
+        <input type="text" id="new-word" placeholder="Ingresa una nueva palabra">
+
+        <button id="easy" class="btn" onclick="goBack()">Guardar facil</button>
+        <button id="medium" class="btn" onclick="saveWord()">Guardar medio</button>
+        <button id="hard" class="btn" onclick="clearInput()">Guardar dificil</button>
+    </div>
+</body>
+</html>

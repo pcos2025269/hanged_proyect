@@ -16,3 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+function loadNewWords() {
+    document.getElementById("news_words").addEventListener("click", () => {
+        window.location.href = "new_words.html";
+    });
+}
