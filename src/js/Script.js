@@ -119,27 +119,47 @@ function disableButtons() {
 }
 
 function muñecoAhorcado() {
-    const imagen = document.getElementById("hangman");
+    const canvas = document.getElementById("hangman");
     const errores = 7 - lives;
+    const dibujo = canvas.getContext("2d");
 
-    if (!imagen) return;
-    if (errores == 0){
-        imagen.src = "src/img/WoodStructure.png";
-    }else if (errores == 1){
-        imagen.src = "src/img/Stage1.png";
+    dibujo.clearRect(0, 0, canvas.width, canvas.height);
+    dibujo.strikeStyle = "#333";
+    dibujo.lineWidth = 4;
+    dibujo.linecap = "round";
+    if (!canvas) return;
+    if (errores == 1){
+        dibujo.beginPath();
+        dibujo.moveTo(10, 220); dibujo.lineTo(190, 220);
+        dibujo.moveTo(50, 220);  dibujo.lineTo(50, 10);
+        dibujo.moveTo(50, 10);   dibujo.lineTo(130, 10);
+        dibujo.moveTo(130, 10);  dibujo.lineTo(130, 40);
+        dibujo.stroke();
     }else if (errores == 2){
-        imagen.src = "src/img/Stage2.png";
+        dibujo.beginPath();
+        dibujo.arc(130, 60, 20, 0, Math.PI * 2);
+        dibujo.stroke();
     }else if (errores == 3){
-        imagen.src = "src/img/Stage3.png";
+        dibujo.beginPath();
+        dibujo.moveTo(130, 80); dibujo.lineTo(130, 150);
+        dibujo.stroke();
     }else if (errores == 4){
-        imagen.src = "src/img/Stage4.png";
+        dibujo.beginPath();
+        dibujo.moveTo(130, 100); dibujo.lineTo(90, 135);
+        dibujo.stroke();
     }else if (errores == 5){
-        imagen.src = "src/img/Stage5.png";
+        dibujo.beginPath();
+        dibujo.moveTo(130, 100); dibujo.lineTo(170, 135);
+        dibujo.stroke();
     }else if (errores == 6){
-        imagen.src = "src/img/Stage6.png";
-    } else if (errores == 7){
-        imagen.src = "src/img/Stage7.png";
-    }
+        dibujo.beginPath();
+        dibujo.moveTo(130, 150); dibujo.lineTo(95, 200);
+        dibujo.stroke();
+    }else if (errores == 7){
+        dibujo.beginPath();
+        dibujo.moveTo(130, 150); dibujo.lineTo(165, 200);
+        dibujo.stroke();
+    } 
 }
 
 function actualizarVidas() {
