@@ -127,7 +127,9 @@ function muñecoAhorcado() {
     dibujo.strokeStyle = "#ffffff";
     dibujo.lineWidth = 4;
     dibujo.lineCap = "round";
+    
     if (!canvas) return;
+
     if (errores >= 1){
         dibujo.beginPath();
         dibujo.moveTo(10, 220); dibujo.lineTo(190, 220);

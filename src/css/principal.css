@@ -10,28 +10,37 @@
 }
 
 body {
-    margin: 0;
-    height: 100vh;
+    margin: 10px;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fondo.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(207, 207, 207, 0)), url('../img/Pizarrón2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .muñeco {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Pizarron.png');
-    background-size: cover;
+    border:2px solid white;
+    border-radius: 10px;
     background-position: center;
     background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
 }
 
 h1 {
     text-align: center;
     width: 100%;
     color: white;
+    font-family: "Schoolbell",cursive;
+    font-size: 50px;
 }
 
 .ahorcado{
@@ -40,16 +49,19 @@ h1 {
     align-items: center;
 }
 
-#canvas {
-    background-color: #fff;
-    border-radius: 10px;
+.hangman {
+    align-items: center;
+    
 }
 
+@import url(https://fonts.googleapis.com/css2?family=Schoolbell&display=swap);
+
 .palabra {
-    font-size: 24px;
+    font-size: 48px;
     letter-spacing: 10px;
     margin-top: 20px;
     color: white;
+    font-family: "Schoolbell", cursive;
 }
 
 .regreso {
@@ -59,9 +71,14 @@ h1 {
     z-index: 1000;
     font-size: 18px;
     color: white;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(110, 1, 1, 0.781);
     padding: 10px 15px;
-    border-radius: 10px;
+    border-radius: 7px;
+}
+
+.regreso:hover{
+    background-color: #ff68959f;
+    color:black;
 }
 
 .vidas {
@@ -71,7 +88,7 @@ h1 {
     z-index: 1000;
     font-size: 18px;
     color: white;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(1, 78, 1, 0.767);
     padding: 10px 15px;
     border-radius: 10px;
 }
@@ -81,21 +98,25 @@ h1 {
     justify-content: center;
 }
 
-#letras-container {
+.letras-container button {
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 10px;
-    border: none;
+    border: white;
     cursor: pointer;
-    background-color: #ffffff;
+    margin: 5px;
+    background-color: #006e00b7;
+    color: white;
+    font-family: "Schoolbell", cursive;
 }
 
-#letras-container:hover {
-    background-color: #e0e0e0;
+.letras-container button:hover {
+    background-color: #a0ff83;
+    color: black;
 }
 
-#letras-container button:disabled {
-    background-color: gray;
+.letras-container button:disabled {
+    background-color: rgba(1, 29, 0, 0.493);
     color: white;
     cursor: not-allowed;
 }
