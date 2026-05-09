@@ -170,3 +170,6 @@ function actualizarVidas() {
         span.textContent = lives;
     }
 }
+
+const nombre = sessionStorage.getItem('jugador') || 'Jugador';
+document.getElementById('nombre-jugador').textContent = nombre;

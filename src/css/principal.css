@@ -9,6 +9,34 @@
     gap: 15px;
 }
 
+.topbar {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+        flex-wrap: wrap;
+}
+
+.jugador-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(167, 139, 250, 0.25);
+    border: 1.5px solid rgba(167,139,250,0.45);
+    border-radius: 60px;
+    padding: 8px 18px;
+    color: #e9d5ff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    backdrop-filter: blur(8px);
+}
+
+.jugador-badge .avatar {
+    font-size: 1.1rem;
+}
+
 body {
     margin: 10px;
     height: 80vh;
